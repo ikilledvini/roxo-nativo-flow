@@ -27,6 +27,7 @@ import {
   openingHours,
   ORDER_URL,
   products,
+  storefrontImg,
   storyImg,
   testimonials,
 } from "@/lib/business-config";
@@ -96,11 +97,11 @@ function LandingPage() {
         <Hero />
         <Benefits />
         <Products />
+        <LocationSection />
         <HowToOrder />
         <BrandStory />
         <Gallery />
         <Testimonials />
-        <LocationSection />
         <FAQSection />
         <FinalCTA />
       </main>
@@ -741,14 +742,21 @@ function LocationSection() {
 
 function StorefrontPreview() {
   return (
-    <div className="rounded-3xl border border-dashed border-purple-300 bg-purple-100/50 p-6 text-center">
-      <div className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-white text-purple-700 shadow-card">
-        <Store className="h-6 w-6" aria-hidden />
+    <div className="group relative min-h-[240px] overflow-hidden rounded-3xl border border-purple-100 bg-purple-100 shadow-card">
+      <img
+        src={storefrontImg}
+        alt="Fachada acolhedora de uma cafeteria com mesas e plantas"
+        loading="lazy"
+        width={1200}
+        height={800}
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-purple-950/90 via-purple-950/55 to-transparent px-6 pb-5 pt-16 text-white">
+        <div className="flex items-center gap-2 font-bold">
+          <Store className="h-5 w-5" aria-hidden />
+          Fachada da loja
+        </div>
       </div>
-      <div className="mt-3 font-bold text-purple-900">Fachada da loja</div>
-      <p className="mt-1 text-sm text-ink-soft">
-        Adicione aqui a fotografia real da fachada.
-      </p>
     </div>
   );
 }
