@@ -308,7 +308,7 @@ function Hero() {
               </a>
             </div>
             <p className="mt-4 text-sm text-purple-100/80">
-              Pedido realizado em ambiente externo seguro
+              Pedido realizado em plataforma parceira externa
             </p>
           </div>
 
