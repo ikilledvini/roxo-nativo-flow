@@ -45,7 +45,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Açaí cremoso, frutas frescas e combinações preparadas para deixar seu dia mais gostoso.",
+          "Conheça o Roxo Nativo Açaí, descubra nossas combinações, veja horários e localização e acesse a plataforma para fazer seu pedido.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },

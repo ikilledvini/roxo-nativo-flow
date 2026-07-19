@@ -87,6 +87,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Roxo Nativo Açaí" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Roxo Nativo Açaí | Seu momento merece mais sabor" },
+      { name: "twitter:title", content: "Roxo Nativo Açaí | Seu momento merece mais sabor" },
+      { property: "og:description", content: "Conheça o Roxo Nativo Açaí, descubra nossas combinações, veja horários e localização e acesse a plataforma para fazer seu pedido." },
+      { name: "twitter:description", content: "Conheça o Roxo Nativo Açaí, descubra nossas combinações, veja horários e localização e acesse a plataforma para fazer seu pedido." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d7b9e13f-22e4-46f2-9b2b-dfe8ec418507/id-preview-bb8fcb06--7377d7df-bb95-41d1-b5ee-0a5b5296797c.lovable.app-1784500960895.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d7b9e13f-22e4-46f2-9b2b-dfe8ec418507/id-preview-bb8fcb06--7377d7df-bb95-41d1-b5ee-0a5b5296797c.lovable.app-1784500960895.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
