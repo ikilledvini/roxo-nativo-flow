@@ -122,7 +122,6 @@ export const galleryImages = [
   { src: galleryDetail, alt: "Detalhe dos complementos: granola, chocolate e frutas" },
   { src: galleryInterior, alt: "Ambiente interno da loja com plantas e iluminação aconchegante" },
   { src: productClassic, alt: "Tigela clássica com banana e granola" },
-  { src: productTropical, alt: "Tigela tropical com manga, kiwi e coco" },
 ];
 
 export { heroBowl, storefrontImg, storyImg };
