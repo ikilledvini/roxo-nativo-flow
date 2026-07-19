@@ -87,8 +87,10 @@ function LandingPage() {
       >
         Pular para o conteúdo
       </a>
-      <AnnouncementBar />
-      <Header />
+      <div className="sticky top-0 z-50">
+        <AnnouncementBar />
+        <Header />
+      </div>
       <main id="main">
         <Hero />
         <Benefits />
@@ -111,15 +113,15 @@ function LandingPage() {
 
 function AnnouncementBar() {
   return (
-    <div className="hidden bg-purple-900 text-purple-100 sm:block">
+    <div className="hidden border-b border-green-500 bg-green-700 text-white shadow-sm sm:block">
       <div className="mx-auto flex max-w-[1240px] items-center justify-center gap-3 px-6 py-2 text-sm">
-        <Sparkles className="h-4 w-4 text-yellow-500" aria-hidden />
+        <Sparkles className="h-4 w-4 text-green-100" aria-hidden />
         <span>Peça pela plataforma online e acompanhe seu pedido</span>
         <a
           href={ORDER_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-bold underline underline-offset-4 hover:text-white"
+          className="font-bold underline decoration-green-100/70 underline-offset-4 hover:text-green-100"
         >
           Fazer pedido agora
         </a>
@@ -163,7 +165,7 @@ function Header() {
   return (
     <header
       className={[
-        "sticky top-0 z-50 transition-all duration-300",
+        "transition-all duration-300",
         scrolled
           ? "bg-cream-100/85 backdrop-blur-md shadow-[0_6px_20px_-12px_rgba(43,16,61,0.2)]"
           : "bg-transparent",
@@ -196,15 +198,12 @@ function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <ExternalOrderButton size="sm" className="hidden sm:inline-flex">
-            Fazer meu pedido
-          </ExternalOrderButton>
-          <ExternalOrderButton size="sm" className="sm:hidden">
-            Pedir agora
-          </ExternalOrderButton>
+          <div className="hidden sm:block">
+            <ExternalOrderButton size="sm">Fazer meu pedido</ExternalOrderButton>
+          </div>
           <button
             type="button"
-            className="grid h-11 w-11 place-items-center rounded-full border border-purple-100 bg-white text-purple-800 shadow-card lg:hidden"
+            className="grid h-11 w-11 place-items-center rounded-full border border-green-100 bg-white text-green-700 shadow-card lg:hidden"
             aria-label="Abrir menu"
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
@@ -242,7 +241,7 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
             type="button"
             onClick={onClose}
             aria-label="Fechar menu"
-            className="grid h-11 w-11 place-items-center rounded-full bg-purple-100 text-purple-800"
+            className="grid h-11 w-11 place-items-center rounded-full bg-green-100 text-green-700"
           >
             <X className="h-5 w-5" aria-hidden />
           </button>
@@ -254,7 +253,7 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
                 <a
                   href={l.href}
                   onClick={onClose}
-                  className="block rounded-2xl px-4 py-3 text-base font-semibold text-purple-900 hover:bg-purple-100"
+                  className="block rounded-2xl px-4 py-3 text-base font-semibold text-purple-900 hover:bg-green-100 hover:text-green-700"
                 >
                   {l.label}
                 </a>
@@ -291,7 +290,7 @@ function Hero() {
         <div className="relative grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
           <div className="text-white">
             <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-purple-100 backdrop-blur">
-              <Sparkles className="h-3.5 w-3.5 text-yellow-500" aria-hidden />
+              <Sparkles className="h-3.5 w-3.5 text-green-100" aria-hidden />
               Açaí cremoso todos os dias
             </span>
             <h1 className="mt-5 font-display text-[38px] font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-[64px]">
@@ -340,7 +339,7 @@ function Hero() {
             </div>
 
             <div className="absolute -bottom-4 right-2 flex items-center gap-2 rounded-2xl bg-white/95 px-4 py-3 shadow-card backdrop-blur sm:right-4">
-              <span className="grid h-9 w-9 place-items-center rounded-full bg-purple-100 text-purple-700">
+              <span className="grid h-9 w-9 place-items-center rounded-full bg-green-100 text-green-700">
                 <Heart className="h-4 w-4" aria-hidden />
               </span>
               <div>
@@ -383,7 +382,7 @@ function Benefits() {
         {items.map((b) => (
           <div
             key={b.title}
-            className="rounded-3xl border border-purple-100 bg-white p-7 shadow-card transition-transform duration-200 hover:-translate-y-1 hover:shadow-hover"
+            className="rounded-3xl border border-green-100 bg-white p-7 shadow-card transition-transform duration-200 hover:-translate-y-1 hover:shadow-hover"
           >
             <span className="grid h-12 w-12 place-items-center rounded-2xl bg-green-100 text-green-700">
               <b.icon className="h-6 w-6" aria-hidden />
@@ -430,7 +429,7 @@ function Products() {
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               {p.tag && (
-                <span className="absolute left-4 top-4 rounded-full bg-white/95 px-3 py-1 text-xs font-bold text-purple-800 shadow-card backdrop-blur">
+                <span className="absolute left-4 top-4 rounded-full bg-green-100/95 px-3 py-1 text-xs font-bold text-green-700 shadow-card backdrop-blur">
                   {p.tag}
                 </span>
               )}
@@ -503,7 +502,7 @@ function HowToOrder() {
           {steps.map((s) => (
             <div
               key={s.n}
-              className="relative rounded-3xl border border-purple-100 bg-white p-7 shadow-card"
+              className="relative rounded-3xl border border-green-100 bg-white p-7 shadow-card"
             >
               <div className="mb-4 grid h-16 w-16 place-items-center rounded-full bg-gradient-green-soft text-2xl font-black text-white shadow-card">
                 {s.n}
@@ -514,7 +513,7 @@ function HowToOrder() {
           ))}
         </div>
 
-        <p className="mt-8 rounded-2xl border border-purple-100 bg-white/70 p-4 text-center text-sm text-purple-800">
+        <p className="mt-8 rounded-2xl border border-green-100 bg-green-100/40 p-4 text-center text-sm text-green-700">
           O pedido, o pagamento e o acompanhamento são realizados em uma plataforma externa.
         </p>
       </div>
@@ -547,7 +546,7 @@ function BrandStory() {
           </div>
           <div className="absolute -bottom-6 -right-3 hidden rounded-3xl bg-white p-5 shadow-float sm:block lg:-right-6">
             <div className="flex items-center gap-3">
-              <span className="grid h-10 w-10 place-items-center rounded-full bg-yellow-500/20 text-purple-800">
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-green-100 text-green-700">
                 <Sparkles className="h-5 w-5" aria-hidden />
               </span>
               <div>
@@ -648,7 +647,7 @@ function Testimonials() {
           >
             <div className="flex items-center gap-1" aria-label={`${t.rating} de 5 estrelas`}>
               {Array.from({ length: t.rating }).map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-yellow-500 text-yellow-500" aria-hidden />
+                <Star key={i} className="h-4 w-4 fill-green-500 text-green-500" aria-hidden />
               ))}
               <span className="sr-only">{t.rating} de 5 estrelas</span>
             </div>
@@ -656,7 +655,7 @@ function Testimonials() {
               “{t.text}”
             </blockquote>
             <figcaption className="mt-5 flex items-center gap-3">
-              <span className="grid h-10 w-10 place-items-center rounded-full bg-gradient-purple-soft font-black text-white">
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-gradient-green-soft font-black text-white">
                 {t.name.charAt(0)}
               </span>
               <span className="font-bold text-purple-900">{t.name}</span>
@@ -715,7 +714,7 @@ function LocationSection() {
                   href={businessConfig.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-full bg-gradient-purple-soft px-5 text-sm font-bold text-white shadow-card transition hover:shadow-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-purple-500/40"
+                  className="inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-full bg-gradient-green-soft px-5 text-sm font-bold text-white shadow-card transition hover:shadow-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-green-500/40"
                 >
                   <MapPin className="h-4 w-4" aria-hidden />
                   Abrir no Google Maps
@@ -724,7 +723,7 @@ function LocationSection() {
                   href={businessConfig.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-full border border-purple-100 bg-white px-5 text-sm font-bold text-purple-800 transition hover:border-purple-300 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-purple-500/40"
+                  className="inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-full border border-green-100 bg-white px-5 text-sm font-bold text-green-700 transition hover:border-green-500 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-green-500/40"
                 >
                   <MessageCircle className="h-4 w-4" aria-hidden />
                   Falar pelo WhatsApp
@@ -769,7 +768,7 @@ function OpeningHoursCard() {
   return (
     <div className="rounded-3xl border border-purple-100 bg-white p-6 shadow-card">
       <div className="flex items-start gap-3">
-        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-purple-100 text-purple-700">
+        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-green-100 text-green-700">
           <Clock className="h-5 w-5" aria-hidden />
         </span>
         <div className="min-w-0 flex-1">
@@ -826,7 +825,7 @@ function ContactCard() {
           {...(i.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
           className="group flex items-center gap-3 rounded-2xl border border-purple-100 bg-white p-4 shadow-card transition-transform hover:-translate-y-0.5 hover:shadow-hover"
         >
-          <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-purple-100 text-purple-700 group-hover:bg-gradient-purple-soft group-hover:text-white">
+          <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-green-100 text-green-700 group-hover:bg-gradient-green-soft group-hover:text-white">
             <i.icon className="h-5 w-5" aria-hidden />
           </span>
           <div className="min-w-0">
@@ -899,7 +898,7 @@ function FinalCTA() {
           aria-hidden
         />
         <div
-          className="pointer-events-none absolute -right-10 -top-10 h-64 w-64 rounded-full bg-yellow-500/10 blur-3xl"
+          className="pointer-events-none absolute -right-10 -top-10 h-64 w-64 rounded-full bg-green-500/20 blur-3xl"
           aria-hidden
         />
         <div className="relative mx-auto max-w-2xl text-white">

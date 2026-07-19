@@ -18,9 +18,8 @@
   --color-green-500: #75a832;
   --color-green-100: #edf5df;
 
-  --color-yellow-500: #f3b63f;
   --color-cream-100: #fff9ee;
-  --color-cream-200: #faf1de;
+  --color-cream-200: #f5f7ea;
 
   --color-ink: #251a29;
   --color-ink-soft: #625668;
@@ -47,17 +46,17 @@
   --color-card-foreground: var(--color-ink);
   --color-primary: var(--color-purple-600);
   --color-primary-foreground: #ffffff;
-  --color-secondary: var(--color-purple-100);
-  --color-secondary-foreground: var(--color-purple-800);
+  --color-secondary: var(--color-green-100);
+  --color-secondary-foreground: var(--color-green-700);
   --color-muted: var(--color-cream-200);
   --color-muted-foreground: var(--color-ink-soft);
-  --color-accent: var(--color-yellow-500);
+  --color-accent: var(--color-green-500);
   --color-accent-foreground: var(--color-purple-900);
   --color-destructive: var(--color-danger);
   --color-destructive-foreground: #ffffff;
   --color-border: var(--color-line);
   --color-input: var(--color-line);
-  --color-ring: var(--color-purple-500);
+  --color-ring: var(--color-green-500);
 }
 
 @layer base {
@@ -65,7 +64,7 @@
     --gradient-purple: linear-gradient(135deg, #6c2a8e 0%, #54206f 52%, #351449 100%);
     --gradient-purple-soft: linear-gradient(135deg, #8744a7 0%, #6c2a8e 100%);
     --gradient-green-soft: linear-gradient(135deg, #86b83e 0%, #5f8d29 100%);
-    --gradient-cream: linear-gradient(135deg, #fff9ee 0%, #f5eaf7 100%);
+    --gradient-cream: linear-gradient(135deg, #fff9ee 0%, #f0f6e4 100%);
   }
 
   * {
@@ -93,7 +92,7 @@
   }
 
   ::selection {
-    background: var(--color-purple-600);
+    background: var(--color-green-500);
     color: #fff;
   }
 
@@ -132,4 +131,8 @@
 
 @utility blob-mask {
   border-radius: 62% 38% 55% 45% / 55% 45% 55% 45%;
+}
+
+#lovable-badge {
+  display: none !important;
 }
