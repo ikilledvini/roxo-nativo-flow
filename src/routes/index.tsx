@@ -68,11 +68,7 @@ export const Route = createFileRoute("/")({
             addressCountry: "BR",
           },
           telephone: businessConfig.phone,
-          openingHours: [
-            "Mo-Fr 10:00-22:00",
-            "Sa 10:00-23:00",
-            "Su 12:00-21:00",
-          ],
+          openingHours: ["Mo-Fr 10:00-22:00", "Sa 10:00-23:00", "Su 12:00-21:00"],
           hasMenu: businessConfig.orderUrl,
           acceptsReservations: false,
         }),
@@ -174,13 +170,14 @@ function Header() {
       ].join(" ")}
     >
       <div className="mx-auto flex max-w-[1240px] items-center justify-between gap-4 px-4 py-3 sm:px-6 sm:py-4">
-        <a href="#inicio" className="flex items-center gap-2" aria-label="Roxo Nativo Açaí — início">
-          <span className="grid h-10 w-10 place-items-center rounded-2xl bg-gradient-purple-soft shadow-card">
-            <Leaf className="h-5 w-5 text-white" aria-hidden />
-          </span>
-          <span className="font-display text-lg font-black tracking-tight text-purple-900">
-            Roxo Nativo
-          </span>
+        <a href="#inicio" className="block" aria-label="Roxo Nativo Açaí — início">
+          <img
+            src={logo}
+            alt="Roxo Nativo"
+            width={955}
+            height={468}
+            className="h-11 w-auto sm:h-12"
+          />
         </a>
 
         <nav aria-label="Navegação principal" className="hidden lg:block">
@@ -189,7 +186,7 @@ function Header() {
               <li key={l.href}>
                 <a
                   href={l.href}
-                  className="rounded-full px-4 py-2 text-sm font-semibold text-purple-900/80 transition-colors hover:bg-purple-100 hover:text-purple-900"
+                  className="rounded-full px-4 py-2 text-sm font-semibold text-purple-900/80 transition-colors hover:bg-green-100 hover:text-green-700"
                 >
                   {l.label}
                 </a>
@@ -282,8 +279,14 @@ function Hero() {
     <section id="inicio" className="px-4 pt-4 sm:px-6 sm:pt-6">
       <div className="relative mx-auto max-w-[1240px] overflow-hidden rounded-[32px] bg-gradient-purple px-6 py-14 sm:px-12 sm:py-20 lg:py-24">
         {/* organic blobs */}
-        <div className="pointer-events-none absolute -left-20 -top-24 h-72 w-72 rounded-full bg-purple-500/30 blur-3xl" aria-hidden />
-        <div className="pointer-events-none absolute -bottom-24 right-10 h-80 w-80 rounded-full bg-yellow-500/10 blur-3xl" aria-hidden />
+        <div
+          className="pointer-events-none absolute -left-20 -top-24 h-72 w-72 rounded-full bg-purple-500/30 blur-3xl"
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute -bottom-24 right-10 h-80 w-80 rounded-full bg-green-500/20 blur-3xl"
+          aria-hidden
+        />
 
         <div className="relative grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
           <div className="text-white">
@@ -292,11 +295,11 @@ function Hero() {
               Açaí cremoso todos os dias
             </span>
             <h1 className="mt-5 font-display text-[38px] font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-[64px]">
-              Seu momento merece{" "}
-              <span className="text-yellow-500">mais sabor</span>
+              Seu momento merece <span className="text-green-100">mais sabor</span>
             </h1>
             <p className="mt-5 max-w-lg text-base text-purple-100 sm:text-lg">
-              Açaí cremoso, frutas frescas e combinações irresistíveis. Escolha seus favoritos e faça o pedido pela nossa plataforma online.
+              Açaí cremoso, frutas frescas e combinações irresistíveis. Escolha seus favoritos e
+              faça o pedido pela nossa plataforma online.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ExternalOrderButton size="lg">Fazer meu pedido</ExternalOrderButton>
@@ -382,7 +385,7 @@ function Benefits() {
             key={b.title}
             className="rounded-3xl border border-purple-100 bg-white p-7 shadow-card transition-transform duration-200 hover:-translate-y-1 hover:shadow-hover"
           >
-            <span className="grid h-12 w-12 place-items-center rounded-2xl bg-purple-100 text-purple-700">
+            <span className="grid h-12 w-12 place-items-center rounded-2xl bg-green-100 text-green-700">
               <b.icon className="h-6 w-6" aria-hidden />
             </span>
             <h3 className="mt-5 text-xl font-black text-purple-900">{b.title}</h3>
@@ -400,7 +403,7 @@ function Products() {
   return (
     <section id="destaques" className="mx-auto max-w-[1240px] px-4 py-10 sm:px-6 sm:py-16">
       <div className="mb-10 max-w-2xl">
-        <span className="inline-flex rounded-full bg-purple-100 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-purple-700">
+        <span className="inline-flex rounded-full bg-green-100 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-green-700">
           Cardápio
         </span>
         <h2 className="mt-4 font-display text-3xl font-black leading-tight text-purple-900 sm:text-4xl lg:text-[44px]">
@@ -434,9 +437,7 @@ function Products() {
             </div>
             <div className="flex flex-1 flex-col p-6">
               <h3 className="text-xl font-black text-purple-900">{p.name}</h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-soft">
-                {p.description}
-              </p>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-soft">{p.description}</p>
               <div className="mt-4 text-xs uppercase tracking-wider text-ink-soft">A partir de</div>
               <div className="text-2xl font-black text-purple-800">{p.price}</div>
               <ExternalOrderButton
@@ -454,7 +455,8 @@ function Products() {
 
       <div className="mt-10 flex flex-col items-center gap-4 text-center">
         <p className="max-w-2xl text-sm text-ink-soft">
-          Valores e disponibilidade podem variar. Consulte as opções atualizadas na plataforma de pedidos.
+          Valores e disponibilidade podem variar. Consulte as opções atualizadas na plataforma de
+          pedidos.
         </p>
         <ExternalOrderButton size="lg" variant="secondary">
           Ver cardápio e pedir
@@ -494,13 +496,16 @@ function HowToOrder() {
         </div>
 
         <div className="relative grid gap-6 md:grid-cols-3">
-          <div className="pointer-events-none absolute left-[10%] right-[10%] top-8 hidden h-[2px] bg-gradient-to-r from-purple-300 via-purple-500 to-purple-300 md:block" aria-hidden />
+          <div
+            className="pointer-events-none absolute left-[10%] right-[10%] top-8 hidden h-[2px] bg-gradient-to-r from-green-100 via-green-500 to-green-100 md:block"
+            aria-hidden
+          />
           {steps.map((s) => (
             <div
               key={s.n}
               className="relative rounded-3xl border border-purple-100 bg-white p-7 shadow-card"
             >
-              <div className="mb-4 grid h-16 w-16 place-items-center rounded-full bg-gradient-purple-soft text-2xl font-black text-white shadow-card">
+              <div className="mb-4 grid h-16 w-16 place-items-center rounded-full bg-gradient-green-soft text-2xl font-black text-white shadow-card">
                 {s.n}
               </div>
               <h3 className="text-xl font-black text-purple-900">{s.title}</h3>
@@ -554,17 +559,20 @@ function BrandStory() {
         </div>
 
         <div className="order-1 lg:order-2">
-          <span className="inline-flex rounded-full bg-purple-100 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-purple-700">
+          <span className="inline-flex rounded-full bg-green-100 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-green-700">
             Nossa história
           </span>
           <h2 className="mt-4 font-display text-3xl font-black leading-tight text-purple-900 sm:text-4xl lg:text-[44px]">
             Sabor que aproxima
           </h2>
           <p className="mt-4 text-[17px] leading-relaxed text-ink-soft">
-            O Roxo Nativo nasceu da vontade de transformar o açaí em uma pausa especial no dia. Com combinações cremosas, frutas frescas e muitos complementos, criamos opções para diferentes momentos — do lanche rápido ao encontro com os amigos.
+            O Roxo Nativo nasceu da vontade de transformar o açaí em uma pausa especial no dia. Com
+            combinações cremosas, frutas frescas e muitos complementos, criamos opções para
+            diferentes momentos — do lanche rápido ao encontro com os amigos.
           </p>
           <p className="mt-4 text-[17px] leading-relaxed text-ink-soft">
-            Nossa proposta é simples: servir sabor, cuidado e liberdade para cada pessoa montar sua combinação favorita.
+            Nossa proposta é simples: servir sabor, cuidado e liberdade para cada pessoa montar sua
+            combinação favorita.
           </p>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2">
             {highlights.map((h) => (
@@ -572,7 +580,7 @@ function BrandStory() {
                 key={h.label}
                 className="flex items-center gap-3 rounded-2xl border border-purple-100 bg-white p-4"
               >
-                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-purple-100 text-purple-700">
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-green-100 text-green-700">
                   <h.icon className="h-4 w-4" aria-hidden />
                 </span>
                 <span className="text-sm font-semibold text-purple-900">{h.label}</span>
@@ -640,11 +648,7 @@ function Testimonials() {
           >
             <div className="flex items-center gap-1" aria-label={`${t.rating} de 5 estrelas`}>
               {Array.from({ length: t.rating }).map((_, i) => (
-                <Star
-                  key={i}
-                  className="h-4 w-4 fill-yellow-500 text-yellow-500"
-                  aria-hidden
-                />
+                <Star key={i} className="h-4 w-4 fill-yellow-500 text-yellow-500" aria-hidden />
               ))}
               <span className="sr-only">{t.rating} de 5 estrelas</span>
             </div>
@@ -671,7 +675,7 @@ function LocationSection() {
     <section id="localizacao" className="bg-gradient-cream py-16 sm:py-24">
       <div className="mx-auto max-w-[1240px] px-4 sm:px-6">
         <div className="mb-10 max-w-2xl">
-          <span className="inline-flex rounded-full bg-purple-100 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-purple-700">
+          <span className="inline-flex rounded-full bg-green-100 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-green-700">
             Onde estamos
           </span>
           <h2 className="mt-4 font-display text-3xl font-black leading-tight text-purple-900 sm:text-4xl lg:text-[44px]">
@@ -697,7 +701,7 @@ function LocationSection() {
           <div className="flex flex-col gap-4">
             <div className="rounded-3xl border border-purple-100 bg-white p-6 shadow-card">
               <div className="flex items-start gap-3">
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-purple-100 text-purple-700">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-green-100 text-green-700">
                   <MapPin className="h-5 w-5" aria-hidden />
                 </span>
                 <div className="min-w-0">
@@ -786,10 +790,32 @@ function OpeningHoursCard() {
 
 function ContactCard() {
   const items = [
-    { icon: Phone, label: "Telefone", value: businessConfig.phone, href: `tel:${businessConfig.phone.replace(/\D/g, "")}` },
-    { icon: MessageCircle, label: "WhatsApp", value: "Enviar mensagem", href: businessConfig.whatsappUrl, external: true },
-    { icon: Instagram, label: "Instagram", value: businessConfig.instagramHandle, href: businessConfig.instagramUrl, external: true },
-    { icon: Mail, label: "E-mail", value: businessConfig.email, href: `mailto:${businessConfig.email}` },
+    {
+      icon: Phone,
+      label: "Telefone",
+      value: businessConfig.phone,
+      href: `tel:${businessConfig.phone.replace(/\D/g, "")}`,
+    },
+    {
+      icon: MessageCircle,
+      label: "WhatsApp",
+      value: "Enviar mensagem",
+      href: businessConfig.whatsappUrl,
+      external: true,
+    },
+    {
+      icon: Instagram,
+      label: "Instagram",
+      value: businessConfig.instagramHandle,
+      href: businessConfig.instagramUrl,
+      external: true,
+    },
+    {
+      icon: Mail,
+      label: "E-mail",
+      value: businessConfig.email,
+      href: `mailto:${businessConfig.email}`,
+    },
   ];
   return (
     <div id="contato" className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -819,7 +845,7 @@ function FAQSection() {
   return (
     <section className="mx-auto max-w-[900px] px-4 py-16 sm:px-6 sm:py-24">
       <div className="mb-10 text-center">
-        <span className="inline-flex rounded-full bg-purple-100 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-purple-700">
+        <span className="inline-flex rounded-full bg-green-100 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-green-700">
           Dúvidas frequentes
         </span>
         <h2 className="mt-4 font-display text-3xl font-black leading-tight text-purple-900 sm:text-4xl">
@@ -868,14 +894,21 @@ function FinalCTA() {
   return (
     <section id="final-cta" className="px-4 pb-16 sm:px-6 sm:pb-24">
       <div className="relative mx-auto max-w-[1240px] overflow-hidden rounded-[32px] bg-gradient-purple px-6 py-14 text-center sm:px-12 sm:py-20">
-        <div className="pointer-events-none absolute -left-16 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-purple-500/30 blur-3xl" aria-hidden />
-        <div className="pointer-events-none absolute -right-10 -top-10 h-64 w-64 rounded-full bg-yellow-500/10 blur-3xl" aria-hidden />
+        <div
+          className="pointer-events-none absolute -left-16 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-purple-500/30 blur-3xl"
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute -right-10 -top-10 h-64 w-64 rounded-full bg-yellow-500/10 blur-3xl"
+          aria-hidden
+        />
         <div className="relative mx-auto max-w-2xl text-white">
           <h2 className="font-display text-3xl font-black leading-tight sm:text-4xl lg:text-[52px]">
             Seu próximo açaí está a poucos cliques
           </h2>
           <p className="mt-4 text-purple-100">
-            Confira o cardápio atualizado, escolha seus favoritos e finalize o pedido pela nossa plataforma.
+            Confira o cardápio atualizado, escolha seus favoritos e finalize o pedido pela nossa
+            plataforma.
           </p>
           <div className="mt-8 flex justify-center">
             <ExternalOrderButton size="lg">Fazer meu pedido</ExternalOrderButton>
@@ -897,12 +930,13 @@ function Footer() {
       <div className="mx-auto max-w-[1240px] px-4 sm:px-6">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr_1fr_1fr]">
           <div>
-            <div className="flex items-center gap-2">
-              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-white/10">
-                <Leaf className="h-5 w-5 text-yellow-500" aria-hidden />
-              </span>
-              <span className="font-display text-xl font-black text-white">Roxo Nativo</span>
-            </div>
+            <img
+              src={logo}
+              alt="Roxo Nativo"
+              width={955}
+              height={468}
+              className="h-20 w-auto rounded-xl bg-white/95 px-3 py-2"
+            />
             <p className="mt-4 max-w-xs text-sm text-purple-100/80">
               {businessConfig.slogan}. Açaí cremoso, frutas frescas e muitas combinações.
             </p>
@@ -933,12 +967,22 @@ function Footer() {
               <li>{businessConfig.address}</li>
               <li>{businessConfig.phone}</li>
               <li>
-                <a href={businessConfig.whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                <a
+                  href={businessConfig.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white"
+                >
                   WhatsApp
                 </a>
               </li>
               <li>
-                <a href={businessConfig.instagramUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                <a
+                  href={businessConfig.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white"
+                >
                   {businessConfig.instagramHandle}
                 </a>
               </li>
@@ -965,9 +1009,13 @@ function Footer() {
 
         <div className="mt-12 border-t border-white/10 py-6 text-xs text-purple-100/70">
           <div className="flex flex-col items-center justify-between gap-3 sm:flex-row">
-            <div>© {new Date().getFullYear()} {businessConfig.name}. Todos os direitos reservados.</div>
+            <div>
+              © {new Date().getFullYear()} {businessConfig.name}. Todos os direitos reservados.
+            </div>
             <div className="flex flex-wrap items-center gap-4">
-              <a href="#" className="hover:text-white">Política de privacidade</a>
+              <a href="#" className="hover:text-white">
+                Política de privacidade
+              </a>
               <span>Projeto conceitual criado para portfólio.</span>
             </div>
           </div>
@@ -984,10 +1032,9 @@ function MobileOrderBar() {
   useEffect(() => {
     const cta = document.getElementById("final-cta");
     if (!cta) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => setVisible(!entry.isIntersecting),
-      { threshold: 0.15 }
-    );
+    const obs = new IntersectionObserver(([entry]) => setVisible(!entry.isIntersecting), {
+      threshold: 0.15,
+    });
     obs.observe(cta);
     return () => obs.disconnect();
   }, []);
@@ -1009,6 +1056,3 @@ function MobileOrderBar() {
     </div>
   );
 }
-
-// suppress unused import warning
-void logo;
