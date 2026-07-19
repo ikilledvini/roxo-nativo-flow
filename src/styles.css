@@ -64,6 +64,7 @@
   :root {
     --gradient-purple: linear-gradient(135deg, #6c2a8e 0%, #54206f 52%, #351449 100%);
     --gradient-purple-soft: linear-gradient(135deg, #8744a7 0%, #6c2a8e 100%);
+    --gradient-green-soft: linear-gradient(135deg, #86b83e 0%, #5f8d29 100%);
     --gradient-cream: linear-gradient(135deg, #fff9ee 0%, #f5eaf7 100%);
   }
 
@@ -83,7 +84,10 @@
     font-feature-settings: "ss01", "cv11";
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     letter-spacing: -0.02em;
     font-weight: 800;
   }
@@ -94,7 +98,9 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       animation-duration: 0.001ms !important;
       transition-duration: 0.001ms !important;
       scroll-behavior: auto !important;
@@ -107,6 +113,9 @@
 }
 @utility bg-gradient-purple-soft {
   background-image: var(--gradient-purple-soft);
+}
+@utility bg-gradient-green-soft {
+  background-image: var(--gradient-green-soft);
 }
 @utility bg-gradient-cream {
   background-image: var(--gradient-cream);
