@@ -111,7 +111,7 @@ export const faqs = [
     a: "Estamos na Avenida das Palmeiras, 245 — Centro. Use o botão 'Abrir no Google Maps' para traçar a rota.",
   },
   {
-    q: "Os preços da landing page são definitivos?",
+    q: "Os preços desta página são definitivos?",
     a: "Os valores exibidos são iniciais. Consulte preços, tamanhos e disponibilidade atualizados na plataforma de pedidos.",
   },
 ];
