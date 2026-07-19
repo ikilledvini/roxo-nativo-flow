@@ -8,6 +8,7 @@ import gallery2 from "@/assets/gallery-2.jpg";
 import galleryInterior from "@/assets/gallery-interior.jpg";
 import galleryDetail from "@/assets/gallery-detail.jpg";
 import storyImg from "@/assets/story.jpg";
+import storefrontImg from "@/assets/storefront.jpg";
 
 export const businessConfig = {
   name: "Roxo Nativo Açaí",
@@ -124,4 +125,4 @@ export const galleryImages = [
   { src: productTropical, alt: "Tigela tropical com manga, kiwi e coco" },
 ];
 
-export { heroBowl, storyImg };
+export { heroBowl, storefrontImg, storyImg };
