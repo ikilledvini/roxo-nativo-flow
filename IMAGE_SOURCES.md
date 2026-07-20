@@ -13,3 +13,9 @@ Todas as fotografias abaixo foram obtidas no Pexels e estão identificadas pela 
 - Galeria — detalhe da tigela: https://www.pexels.com/photo/close-up-of-an-acai-bowl-14167805/
 - Galeria — interior: https://www.pexels.com/photo/the-interior-of-a-cafe-13113907/
 - Fachada: https://www.pexels.com/photo/exterior-of-a-cafe-14356873/
+- Perfil demonstrativo — Marina: https://www.pexels.com/photo/portrait-of-smiling-woman-16435650/
+- Perfil demonstrativo — Gabriel: https://www.pexels.com/photo/portrait-of-a-smiling-man-reaching-toward-the-camera-26839815/
+- Perfil demonstrativo — Amanda: https://www.pexels.com/photo/portrait-of-a-smiling-woman-16383758/
+- Perfil demonstrativo — Lucas: https://www.pexels.com/photo/portrait-of-smiling-young-man-3958799/
+- Perfil demonstrativo — Beatriz: https://www.pexels.com/photo/natural-beauty-portrait-of-smiling-woman-in-sao-paulo-33614428/
+- Perfil demonstrativo — Renata: https://www.pexels.com/photo/smiling-woman-2034512/

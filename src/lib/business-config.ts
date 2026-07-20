@@ -9,6 +9,12 @@ import galleryInterior from "@/assets/gallery-interior.jpg";
 import galleryDetail from "@/assets/gallery-detail.jpg";
 import storyImg from "@/assets/story.jpg";
 import storefrontImg from "@/assets/storefront.jpg";
+import reviewMarina from "@/assets/review-marina.jpg";
+import reviewGabriel from "@/assets/review-gabriel.jpg";
+import reviewAmanda from "@/assets/review-amanda.jpg";
+import reviewLucas from "@/assets/review-lucas.jpg";
+import reviewBeatriz from "@/assets/review-beatriz.jpg";
+import reviewRenata from "@/assets/review-renata.jpg";
 
 export const businessConfig = {
   name: "Roxo Nativo Açaí",
@@ -21,10 +27,8 @@ export const businessConfig = {
   instagramHandle: "@roxonativoacai",
   address: "Avenida das Palmeiras, 245 — Centro",
   cep: "00000-000",
-  mapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Avenida+das+Palmeiras+245+Centro",
-  mapsEmbedUrl:
-    "https://www.google.com/maps?q=Avenida+das+Palmeiras+245+Centro&output=embed",
+  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Avenida+das+Palmeiras+245+Centro",
+  mapsEmbedUrl: "https://www.google.com/maps?q=Avenida+das+Palmeiras+245+Centro&output=embed",
   streetViewEmbedUrl: "",
 };
 
@@ -76,16 +80,37 @@ export const testimonials = [
     name: "Marina S.",
     text: "Ótimas opções de complementos e o açaí chegou muito bem montado.",
     rating: 5,
+    image: reviewMarina,
   },
   {
     name: "Gabriel M.",
     text: "A plataforma de pedidos é prática e encontrei tudo com facilidade.",
     rating: 5,
+    image: reviewGabriel,
   },
   {
     name: "Amanda R.",
     text: "O ambiente é bonito, o atendimento é atencioso e as combinações são deliciosas.",
     rating: 5,
+    image: reviewAmanda,
+  },
+  {
+    name: "Lucas P.",
+    text: "A textura do açaí é excelente e os complementos chegaram frescos e bem separados.",
+    rating: 5,
+    image: reviewLucas,
+  },
+  {
+    name: "Beatriz C.",
+    text: "Adorei poder montar tudo do meu jeito. O pedido ficou pronto rápido e veio caprichado.",
+    rating: 5,
+    image: reviewBeatriz,
+  },
+  {
+    name: "Renata L.",
+    text: "O espaço é acolhedor e o cardápio tem combinações para todos os gostos.",
+    rating: 5,
+    image: reviewRenata,
   },
 ];
 
